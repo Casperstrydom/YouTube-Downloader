@@ -3,43 +3,24 @@
 @import 'tailwindcss/utilities';
 
 body {
-  background-image: url('https://i.ytimg.com/vi/sZJkDHFtkqI/maxresdefault.jpg');
+  background-color: lightgreen;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif; /* Adding a default font */
 }
- 
 
-.button-1 {
+.button-1, .button-2 {
   color: red;
 }
 
-.button-2 {
-  color: red;
-}
-
-.button-85-1 {
+.button-85-1, .button-85-2 {
   display: block;
   padding: 12px 26px;
   border: 0;
-  font-size: 1vw;
-  transition: all 150ms ease-in-out;
-  border-radius: 14px;
-  border: 1px solid #8BB33D;
-  box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.07) 0 1px 1px, rgba(0, 0, 0, 0.07) 0 2px 2px, rgba(0, 0, 0, 0.07) 0 4px 4px;
-  color: #000000;
-  font-weight: 600;
-  background-image: linear-gradient(180deg, #B4E84E 0%, #8BB33D 100%);
-  text-shadow: -1px 0 1px #B4E84E, 0 1px 1px #B4E84E, 1px 0 1px #B4E84E, 0 -1px 1px #B4E84E;
-}
-
-.button-85-2 {
-  display: block;
-  padding: 12px 26px;
-  border: 0;
-  font-size: 1vw;
+  font-size: 1rem; /* Use rem for scalability */
   transition: all 150ms ease-in-out;
   border-radius: 14px;
   border: 1px solid #8BB33D;
@@ -52,40 +33,32 @@ body {
 
 .button-85-1 {
   position: absolute;
-  left: 10%;
-  bottom: 82.7%;
+  left: 28%;
+  bottom: 40%;
 }
 
-.button-85-2 {
+.button-85-2{
   position: absolute;
-  right: 10%;
-  bottom: 82.7%;
+  right: 40%;
+  bottom: 40%;
 }
 
-
-.button-85-1:hover{
+.button-85-1:hover, .button-85-2:hover {
   filter: brightness(1.1);
 }
 
-.button-85-2:hover {
-  filter: brightness(1.1);
-}
-
-.button-85-1:active {
-  transform: scale(0.95);
-}
-
-.button-85-2:active{
+.button-85-1:active, .button-85-2:active {
   transform: scale(0.95);
 }
 
 .Mp4-1 {
-  font-style: verdana;
-  color: rgba(112, 5, 5, 0.59);
+  font-family: Verdana, sans-serif; /* Correct font-family property */
+  color: rgba(23, 24, 23, 0.59);
   position: absolute;
-  left: 31.5%;
-  bottom: 90%;
-  font-size: 3.5vw;
+  left: 31.6%;
+  right: 31.6;
+  bottom: 60%;
+  font-size: 2rem; /* Use rem for scalability */
 }
 
 .subscription-plans {
@@ -94,25 +67,42 @@ body {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 2vw;
+  font-size: 1.5rem; /* Use rem for scalability */
   position: absolute;
-  bottom: 78.7%;
-  left: 42.5%;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
 }
 
- .container1 {
+.container1 {
   width: 100%;
 }
 
 .input-box {
   height: 25px;
-  width: 40%;
+  width: 30%; /* Adjust for better scaling */
   position: absolute;
-  left: 30%;
-  bottom: 82.7%;
+  left: 29%; /* Center horizontally */
+  bottom: 50%;
 }
 
-.inputbox3{
-position:absolute;
-bottom:10%;
+.inputbox3 {
+  position: absolute;
+  bottom: 10%;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .button-85-1, .button-85-2 {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+    padding: 8px 16px; /* Adjust padding */
+  }
+
+  .Mp4-1, .subscription-plans {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+
+  .input-box {
+    width: 80%; /* Adjust width for smaller screens */
+  }
 }
