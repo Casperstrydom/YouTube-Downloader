@@ -3,7 +3,7 @@
 @import 'tailwindcss/utilities';
 
 body {
-  background-color: lightgreen;
+  background-image: url('https://img.goodfon.com/wallpaper/big/7/cd/abstrakciya-uzory-linii-pyatna.jpg'); /* Add your image URL here */
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -93,6 +93,10 @@ body {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
+  body {
+    background-image: url('https://img.goodfon.com/wallpaper/big/7/cd/abstrakciya-uzory-linii-pyatna.jpg'); /* Add your mobile-specific image URL here */
+  }
+
   .button-85-1 {
     font-size: 0.875rem; /* Adjust font size for smaller screens */
     padding: 8px 16px; /* Adjust padding */
@@ -101,13 +105,14 @@ body {
     bottom: 30%; /* Adjust positioning */
   }
   
-  .button-85-2{
+  .button-85-2 {
     font-size: 0.875rem; /* Adjust font size for smaller screens */
     padding: 8px 16px; /* Adjust padding */
     left: 15%; /* Adjust positioning */
     right: 15%; /* Adjust positioning */
-    bottom: 10%; /* Adjust positioning */
+    bottom: 20%; /* Adjust positioning */
   }
+  
   .Mp4-1, .subscription-plans {
     font-size: 1.25rem; /* Adjust font size for smaller screens */
     left: 10%; /* Adjust positioning */
