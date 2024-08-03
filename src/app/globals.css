@@ -93,14 +93,21 @@ body {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-  .button-85-1, .button-85-2 {
+  .button-85-1 {
     font-size: 0.875rem; /* Adjust font size for smaller screens */
     padding: 8px 16px; /* Adjust padding */
     left: 15%; /* Adjust positioning */
     right: 15%; /* Adjust positioning */
     bottom: 30%; /* Adjust positioning */
   }
-
+  
+  .button-85-2{
+    font-size: 0.875rem; /* Adjust font size for smaller screens */
+    padding: 8px 16px; /* Adjust padding */
+    left: 15%; /* Adjust positioning */
+    right: 15%; /* Adjust positioning */
+    bottom: 10%; /* Adjust positioning */
+  }
   .Mp4-1, .subscription-plans {
     font-size: 1.25rem; /* Adjust font size for smaller screens */
     left: 10%; /* Adjust positioning */
