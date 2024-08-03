@@ -37,7 +37,7 @@ body {
   bottom: 40%;
 }
 
-.button-85-2{
+.button-85-2 {
   position: absolute;
   right: 40%;
   bottom: 40%;
@@ -56,7 +56,7 @@ body {
   color: rgba(23, 24, 23, 0.59);
   position: absolute;
   left: 31.6%;
-  right: 31.6;
+  right: 31.6%;
   bottom: 60%;
   font-size: 2rem; /* Use rem for scalability */
 }
@@ -82,7 +82,7 @@ body {
   height: 25px;
   width: 30%; /* Adjust for better scaling */
   position: absolute;
-  left: 29%; /* Center horizontally */
+  left: 35%; /* Center horizontally */
   bottom: 50%;
 }
 
@@ -94,15 +94,22 @@ body {
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .button-85-1, .button-85-2 {
-    font-size: 1rem; /* Adjust font size for smaller screens */
+    font-size: 0.875rem; /* Adjust font size for smaller screens */
     padding: 8px 16px; /* Adjust padding */
+    left: 15%; /* Adjust positioning */
+    right: 15%; /* Adjust positioning */
+    bottom: 30%; /* Adjust positioning */
   }
 
   .Mp4-1, .subscription-plans {
-    font-size: 1.5rem; /* Adjust font size for smaller screens */
+    font-size: 1.25rem; /* Adjust font size for smaller screens */
+    left: 10%; /* Adjust positioning */
+    right: 10%; /* Adjust positioning */
   }
 
   .input-box {
     width: 80%; /* Adjust width for smaller screens */
+    left: 10%; /* Adjust positioning */
+    bottom: 40%; /* Adjust positioning */
   }
 }
