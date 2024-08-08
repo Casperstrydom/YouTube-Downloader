@@ -13,22 +13,17 @@ app.use(bodyParser.json());
 // Route handler for downloading files
 app.post("/download", (req, res) => {
   const { url, type } = req.body;
-  
-  // Validate input
-  if (!url || !type || !['audio', 'video'].includes(type)) {
-    return res.status(400).send('Invalid request data');
+  if (!url || !type) {
+    return res.status(400).send("URL and type are required");
   }
 
+  const filename = type === 'audio' ? 'downloaded_audio.mp3' : 'downloaded_video.mp4';
+  const filePath = path.join(__dirname, filename);
   const pythonProcess = spawn('python3', ['download.py', url, type]);
 
   pythonProcess.on('exit', (code) => {
     console.log(`Python process exited with code ${code}`);
-    
     if (code === 0) {
-      const filename = type === 'audio' ? 'downloaded_audio.mp3' : 'downloaded_video.mp4';
-      const filePath = path.join(__dirname, filename);
-      console.log(`Checking for file at: ${filePath}`);
-
       // Check if file exists
       fs.access(filePath, fs.constants.F_OK, (err) => {
         if (err) {
@@ -37,7 +32,7 @@ app.post("/download", (req, res) => {
         }
 
         // Stream the file if it exists
-        res.setHeader('Content-Disposition', `attachment; filename=${filename}`);
+        res.setHeader('Content-disposition', `attachment; filename=${filename}`);
         res.setHeader('Content-Type', type === 'audio' ? 'audio/mp3' : 'video/mp4');
         const fileStream = fs.createReadStream(filePath);
         fileStream.pipe(res);
@@ -49,12 +44,6 @@ app.post("/download", (req, res) => {
 
   pythonProcess.stderr.on('data', (data) => {
     console.error(`stderr: ${data}`);
-  });
-
-  // Handle errors during the process
-  pythonProcess.on('error', (err) => {
-    console.error(`Error starting Python process: ${err}`);
-    res.status(500).send("Error starting download process");
   });
 });
 
